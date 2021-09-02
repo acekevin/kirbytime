@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  // Edit below 🔻 🔻 🔻 🔻 🔻
+
+  // Set this to some bigger number to preload kirby's
+  const INITIAL_KIRBYS = 0;
+
+  // Set this to when you want kirby's to appear
+  const INTERVAL_SECONDS = 1; // 900 for 15 minutes
+
+  // Add your list of remote or local kirby's, all will be resized to 50px x 50px
+  const IMAGES = [
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fcharacters%2Fimages%2F6%2F66%2FKirby_(KRTDL).png%2Frevision%2Flatest%3Fcb%3D20140622151800&f=1&nofb=1',
+    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fnintendo%2Fimages%2Fd%2Fdf%2FCutter_Kirby.png%2Frevision%2Flatest%2Fscale-to-width-down%2F2000%3Fcb%3D20160427042856%26path-prefix%3Den&f=1&nofb=1',
+  ];
+
+  // DON'T TOUCH BELOW HERE!
+
+  const imageSize = IMAGES.length;
+  const width = window.innerWidth - 50;
+  const height = window.innerHeight -50;
+
+  function random(size) {
+    return Math.round(Math.random() * size);
+  }
+
+  function kirbytime() {
+    const img = document.createElement("img");
+    img.src = IMAGES[random(imageSize - 1)];
+    img.style.width = '50px';
+    img.style.height = '50px';
+    img.style.top = random(height) + 'px';
+    img.style.left = random(width) + 'px';
+    img.style.position = 'absolute';
+
+    document.body.appendChild(img);
+  }
+  
+  // Preload Kirbys
+  for (i = 0; i < INITIAL_KIRBYS; i++) {
+    kirbytime();
+  }
+
+  setInterval(kirbytime, INTERVAL_SECONDS * 1000);
+
+</script>
+</body>
+</html>
