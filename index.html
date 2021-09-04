@@ -5,9 +5,7 @@
   <title>Title</title>
 </head>
 <body>
-<div style='border: 1px solid red; top: 0; left: 0; position: absolute; width: 1920px; height: 1080px;'></div>
-<div style='border: 1px solid red; top: 20px; left: 20px; position: absolute; width: 400px; height: 300px;'></div>
-<div style='border: 1px solid red; top: 20px; left: 600px; position: absolute; width: 1300px; height: 1040px;'></div>
+<div style='top: 0; left: 0; position: absolute; width: 1920px; height: 1080px; background: url(./kirby-base-screen.png);'></div>
 
 <script>
   // Edit below 🔻 🔻 🔻 🔻 🔻
@@ -18,22 +16,142 @@
   // Set this to when you want kirby's to appear
   const INTERVAL_MS = 1; // 900000 for 15 minutes
 
-  const IMAGE_WIDTH_MIN = 24;
-  const IMAGE_WIDTH_MAX = 128;
+  const REPEAT = false;
+  const IMAGE_WIDTH_MIN = 125;
+  const IMAGE_WIDTH_MAX = 150;
   const IMAGE_WIDTH = 50; // width in pixels, height will adjust accordingly
 
   // Add your list of remote or local kirby's, all will be resized to 50px x 50px
   const IMAGES = [
-    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fcharacters%2Fimages%2F6%2F66%2FKirby_(KRTDL).png%2Frevision%2Flatest%3Fcb%3D20140622151800&f=1&nofb=1',
-    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fnintendo%2Fimages%2Fd%2Fdf%2FCutter_Kirby.png%2Frevision%2Flatest%2Fscale-to-width-down%2F2000%3Fcb%3D20160427042856%26path-prefix%3Den&f=1&nofb=1',
-    'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fvignette2.wikia.nocookie.net%2Fkirbyfanon%2Fimages%2Fa%2Fa7%2FMic_Kirby.png%2Frevision%2Flatest%2Fscale-to-width-down%2F2000%3Fcb%3D20150326071204&f=1&nofb=1',
-    'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fkirby%2Fimages%2F3%2F30%2FKFD_Yellow_Kirby_artwork.png%2Frevision%2Flatest%2Fscale-to-width-down%2F2000%3Fcb%3D20180331044813%26path-prefix%3Den&f=1&nofb=1',
+    './kirby/kirby1.png',
+    './kirby/kirby10.png',
+    './kirby/kirby11.png',
+    './kirby/kirby12.png',
+    './kirby/kirby13.png',
+    './kirby/kirby14.png',
+    './kirby/kirby15.png',
+    './kirby/kirby16.png',
+    './kirby/kirby17.png',
+    './kirby/kirby18.png',
+    './kirby/kirby19.png',
+    './kirby/kirby2.png',
+    './kirby/kirby20.png',
+    './kirby/kirby21.png',
+    './kirby/kirby22.png',
+    './kirby/kirby23.png',
+    './kirby/kirby24.png',
+    './kirby/kirby25.png',
+    './kirby/kirby26.png',
+    './kirby/kirby27.png',
+    './kirby/kirby28.png',
+    './kirby/kirby29.png',
+    './kirby/kirby3.png',
+    './kirby/kirby30.png',
+    './kirby/kirby31.png',
+    './kirby/kirby32.png',
+    './kirby/kirby33.png',
+    './kirby/kirby34.png',
+    './kirby/kirby35.png',
+    './kirby/kirby36.png',
+    './kirby/kirby37.png',
+    './kirby/kirby38.png',
+    './kirby/kirby39.png',
+    './kirby/kirby4.png',
+    './kirby/kirby40.png',
+    './kirby/kirby41.png',
+    './kirby/kirby42.png',
+    './kirby/kirby43.png',
+    './kirby/kirby44.png',
+    './kirby/kirby45.png',
+    './kirby/kirby46.png',
+    './kirby/kirby47.png',
+    './kirby/kirby48.png',
+    './kirby/kirby49.png',
+    './kirby/kirby5.png',
+    './kirby/kirby50.png',
+    './kirby/kirby51.png',
+    './kirby/kirby52.png',
+    './kirby/kirby53.png',
+    './kirby/kirby54.png',
+    './kirby/kirby55.png',
+    './kirby/kirby56.png',
+    './kirby/kirby57.png',
+    './kirby/kirby58.png',
+    './kirby/kirby59.png',
+    './kirby/kirby6.png',
+    './kirby/kirby60.png',
+    './kirby/kirby61.png',
+    './kirby/kirby62.png',
+    './kirby/kirby63.png',
+    './kirby/kirby64.png',
+    './kirby/kirby65.png',
+    './kirby/kirby66.png',
+    './kirby/kirby67.png',
+    './kirby/kirby68.png',
+    './kirby/kirby69.png',
+    './kirby/kirby7.png',
+    './kirby/kirby70.png',
+    './kirby/kirby71.png',
+    './kirby/kirby72.png',
+    './kirby/kirby73.png',
+    './kirby/kirby74.png',
+    './kirby/kirby75.png',
+    './kirby/kirby76.png',
+    './kirby/kirby77.png',
+    './kirby/kirby78.png',
+    './kirby/kirby79.png',
+    './kirby/kirby8.png',
+    './kirby/kirby80.png',
+    './kirby/kirby9.png',
+    './kirby/kirbys.png',
+    './kirby/s_kirby1.png',
+    './kirby/s_kirby10.png',
+    './kirby/s_kirby11.png',
+    './kirby/s_kirby12.png',
+    './kirby/s_kirby13.png',
+    './kirby/s_kirby14.png',
+    './kirby/s_kirby15.png',
+    './kirby/s_kirby16.png',
+    './kirby/s_kirby17.png',
+    './kirby/s_kirby18.png',
+    './kirby/s_kirby19.png',
+    './kirby/s_kirby2.png',
+    './kirby/s_kirby20.png',
+    './kirby/s_kirby21.png',
+    './kirby/s_kirby22.png',
+    './kirby/s_kirby23.png',
+    './kirby/s_kirby24.png',
+    './kirby/s_kirby25.png',
+    './kirby/s_kirby26.png',
+    './kirby/s_kirby27.png',
+    './kirby/s_kirby28.png',
+    './kirby/s_kirby29.png',
+    './kirby/s_kirby3.png',
+    './kirby/s_kirby30.png',
+    './kirby/s_kirby31.png',
+    './kirby/s_kirby32.png',
+    './kirby/s_kirby33.png',
+    './kirby/s_kirby34.png',
+    './kirby/s_kirby35.png',
+    './kirby/s_kirby36.png',
+    './kirby/s_kirby37.png',
+    './kirby/s_kirby38.png',
+    './kirby/s_kirby39.png',
+    './kirby/s_kirby4.png',
+    './kirby/s_kirby40.png',
+    './kirby/s_kirby41.png',
+    './kirby/s_kirby5.png',
+    './kirby/s_kirby6.png',
+    './kirby/s_kirby69.png',
+    './kirby/s_kirby7.png',
+    './kirby/s_kirby8.png',
+    './kirby/s_kirby9.png',
   ];
 
   // Add for each region where a Kirby shouldn't go [X0, Y0, X1, Y1]
   const DEAD_ZONES = [
-    [20, 20, 420, 320],
-    [600, 20, 1900, 1060],
+    [0, 0, 464, 350],
+    [565, 69, 1866, 926],
   ]
 
   // 💀 💀 💀 💀 💀 DON'T TOUCH BELOW HERE!
@@ -41,6 +159,7 @@
   const imageSize = IMAGES.length;
   const width = Math.min(1920, window.innerWidth);
   const height = Math.min(1080, window.innerHeight);
+  let kirbyInterval = null;
   let counter = 0;
 
   function random(size, min = 0) {
@@ -59,20 +178,35 @@
   }
 
   function kirbytime() {
+    if (!REPEAT && counter >= imageSize && kirbyInterval) {
+      clearInterval(kirbyInterval);
+      return false;
+    }
+
     const img = document.createElement("img");
     const size = random(IMAGE_WIDTH_MAX - IMAGE_WIDTH_MIN, IMAGE_WIDTH_MIN);
     const midpoint = Math.round(size / 2);
 
     img.src = IMAGES[counter++ % imageSize];
-    img.style.width = size + 'px';
+    img.onload = () => {
+      const natWidth = img.naturalWidth;
+      const natHeight = img.naturalHeight;
+      const ratio = size / natWidth;
 
-    const [left, top] = getXY(); // adjust for offset
-    img.style.top = (top - midpoint) + 'px';
-    img.style.left = (left - midpoint) + 'px';
-    img.style.position = 'absolute';
-    img.style.transform = 'rotate(' + random(90, -45) + 'deg) scaleX(' + (Math.round(Math.random()) ? 1 : -1) + ')';
+      // Ratio will automatically apply with dom html, no need to set height
+      img.style.width = size + 'px';
 
-    document.body.appendChild(img);
+      const widthMid = Math.round(size / 2);
+      const heightMid = Math.round(natHeight * ratio / 2);
+
+      const [left, top] = getXY(); // adjust for offset
+      img.style.top = (top - heightMid) + 'px';
+      img.style.left = (left - widthMid) + 'px';
+      img.style.position = 'absolute';
+      img.style.transform = 'rotate(' + random(90, -45) + 'deg) scaleX(' + (Math.round(Math.random()) ? 1 : -1) + ')';
+
+      document.body.appendChild(img);
+    }
   }
 
   // Preload Kirbys
@@ -80,7 +214,7 @@
     kirbytime();
   }
 
-  setInterval(kirbytime, INTERVAL_MS);
+  kirbyInterval = setInterval(kirbytime, INTERVAL_MS);
 
 </script>
 </body>
